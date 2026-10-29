@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Datos personales</string>
+    <string name="hintNombre">Enter your name here</string>
+    <string name="hintApellido">Enter your last name here</string>
+    <string name="hintEdad">Enter your age here</string>
+    <string name="textHombre">Man</string>
+    <string name="textMujer">Woman</string>
+
+    <string-array name="spinnerEstadoCivil">
+        <item>Select a Civil Status</item>
+        <item>single</item>
+        <item>married</item>
+        <item>divorced</item>
+        <item>widower</item>
+        <item>other</item>
+    </string-array>
+
+    <string-array name="spinnerIdioma">
+        <item>Choose your language</item>
+        <item>Español</item>
+        <item>English</item>
+        <item>Français</item>
+    </string-array>
+
+    <string name="textHijos">Do you have children?</string>
+    <string name="textDatos">Show Data</string>
+    <string name="textReiniciar">Clean</string>
+
+    <string name="camposFaltantes">You need to fill in these fields: </string>
+    <string name="mensajeNombre">Name</string>
+    <string name="mensajeApellido">Last name</string>
+    <string name="mensajeEdad">Age</string>
+    <string name="mensajeGenero">Gender</string>
+    <string name="mensajeEstadoCivil">Civil status</string>
+    <string name="mayorEdad">is of legal age</string>
+    <string name="menorEdad">is a minor</string>
+    <string name="tieneHijos">has children</string>
+    <string name="sinHijos">no children</string>
+    <string name="tusDatos">Your data: </string>
+</resources>

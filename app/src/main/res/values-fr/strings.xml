@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Datos personales</string>
+    <string name="hintNombre">Entrez votre prénom ici</string>
+    <string name="hintApellido">Entrez votre nom ici</string>
+    <string name="hintEdad">Entrez votre âge ici</string>
+    <string name="textHombre">Homme</string>
+    <string name="textMujer">Femme</string>
+
+    <string-array name="spinnerEstadoCivil">
+        <item>Sélectionnez un état civil</item>
+        <item>Célibataire</item>
+        <item>Marié(e)</item>
+        <item>Divorcé(e)</item>
+        <item>Veuf/Veuve</item>
+        <item>Autre</item>
+    </string-array>
+
+    <string-array name="spinnerIdioma">
+        <item>Choisissez votre langue</item>
+        <item>Español</item>
+        <item>English</item>
+        <item>Français</item>
+    </string-array>
+
+    <string name="textHijos">Avez-vous des enfants ?</string>
+    <string name="textDatos">Afficher las données</string>
+    <string name="textReiniciar">Réinitialiser</string>
+
+    <string name="camposFaltantes">Vous devez remplir ces champs : </string>
+    <string name="mensajeNombre">Prénom</string>
+    <string name="mensajeApellido">Nom</string>
+    <string name="mensajeEdad">Âge</string>
+    <string name="mensajeGenero">Genre</string>
+    <string name="mensajeEstadoCivil">État civil</string>
+    <string name="mayorEdad">est majeur(e)</string>
+    <string name="menorEdad">est mineur(e)</string>
+    <string name="tieneHijos">a des enfants</string>
+    <string name="sinHijos">sans enfants</string>
+    <string name="tusDatos">Vos données : </string>
+</resources>
