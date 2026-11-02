@@ -10,14 +10,14 @@
 
     <EditText
         android:id="@+id/etextNombre"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/hintNombre"
+        android:hint="@string/etextNombre"
         android:inputType="textPersonName|textCapWords"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spnIdioma"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/spnIdioma"
         app:layout_constraintTop_toBottomOf="@+id/spnIdioma"
@@ -25,14 +25,14 @@
 
     <EditText
         android:id="@+id/etextApellido"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/hintApellido"
+        android:hint="@string/etextApellido"
         android:inputType="textPersonName|textCapWords"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etextNombre"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etextNombre"
         app:layout_constraintTop_toBottomOf="@+id/etextNombre"
@@ -40,14 +40,14 @@
 
     <EditText
         android:id="@+id/etextEdad"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/hintEdad"
+        android:hint="@string/etextEdad"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etextApellido"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etextApellido"
         app:layout_constraintTop_toBottomOf="@+id/etextApellido"
@@ -57,22 +57,24 @@
         android:id="@+id/btnDatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/btnAzul"
-        android:text="@string/textDatos"
+        android:text="@string/btnDatos"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txtvMensaje"
         app:layout_constraintTop_toBottomOf="@+id/txtvMensaje"
-        app:layout_constraintVertical_bias="0.006" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnReiniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/btnAzul"
-        android:text="@string/textReiniciar"
+        android:text="@string/btnReiniciar"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/txtvMensaje"
         app:layout_constraintHorizontal_bias="1.0"
@@ -82,40 +84,38 @@
 
     <RadioGroup
         android:id="@+id/rgroupGenero"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etextEdad"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etextEdad"
         app:layout_constraintTop_toBottomOf="@+id/etextEdad"
         app:layout_constraintVertical_bias="0.0">
 
         <RadioButton
-            android:id="@+id/rbtnHombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/textHombre" />
+            android:text="@string/rbtnHombre" />
 
         <RadioButton
-            android:id="@+id/rbtnMujer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/textMujer" />
+            android:text="@string/rbtnMujer" />
     </RadioGroup>
 
     <Spinner
         android:id="@+id/spnEstadoCivil"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
         android:popupBackground="@drawable/fondo_formulario"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rgroupGenero"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/rgroupGenero"
         app:layout_constraintTop_toBottomOf="@+id/rgroupGenero"
@@ -123,23 +123,27 @@
 
     <Spinner
         android:id="@+id/spnIdioma"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:popupBackground="@drawable/fondo_formulario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Switch
         android:id="@+id/swtHijos"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/textHijos"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/swtHijos"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spnEstadoCivil"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/spnEstadoCivil"
         app:layout_constraintTop_toBottomOf="@+id/spnEstadoCivil"
@@ -147,13 +151,13 @@
 
     <TextView
         android:id="@+id/txtvMensaje"
-        android:layout_width="326dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/swtHijos"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/swtHijos"
         app:layout_constraintTop_toBottomOf="@+id/swtHijos"

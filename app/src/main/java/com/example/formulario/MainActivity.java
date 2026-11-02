@@ -17,24 +17,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import android.view.View;
+import android.widget.AdapterView;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.os.LocaleListCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText nombre;
-    EditText apellido;
-    EditText edad;
-
+    EditText nombre, apellido, edad;
     TextView mensaje;
     RadioGroup genero;
-    Spinner estadoCivil;
-    Spinner idioma;
+    Spinner estadoCivil, idioma;
     Switch hijos;
-
-    Button datos;
-
-    Button reiniciar;
+    Button datos, reiniciar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,34 +52,62 @@ public class MainActivity extends AppCompatActivity {
 
         genero = findViewById(R.id.rgroupGenero);
 
+        //creacion del spinner
         estadoCivil = findViewById(R.id.spnEstadoCivil);
-        ArrayAdapter<CharSequence> adpEstadiCivil = ArrayAdapter.createFromResource(
+        ArrayAdapter<CharSequence> adpEstadoCivil = ArrayAdapter.createFromResource(
                 this,
-                R.array.spinnerEstadoCivil,
+                R.array.spnEstadoCivil,
                 android.R.layout.simple_spinner_item
         );
-        adpEstadiCivil.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        estadoCivil.setAdapter(adpEstadiCivil);
+        adpEstadoCivil.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        estadoCivil.setAdapter(adpEstadoCivil);
 
         idioma = findViewById(R.id.spnIdioma);
         ArrayAdapter<CharSequence> adpIdioma = ArrayAdapter.createFromResource(
                 this,
-                R.array.spinnerIdioma,
+                R.array.spnIdioma,
                 android.R.layout.simple_spinner_item
         );
         adpIdioma.setDropDownViewResource(android.R.layout.simple_spinner_item);
         idioma.setAdapter(adpIdioma);
 
-        String[] codigosIdiomas = {"", "es", "en", "fr"};
-        idioma.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
+        //seleccion del lenguaje
+        String idiomaActual = AppCompatDelegate.getApplicationLocales().toLanguageTags();
+        if (idiomaActual.startsWith("es")) {
+            idioma.setSelection(1);
+        } else if (idiomaActual.startsWith("en")) {
+            idioma.setSelection(2);
+        } else if (idiomaActual.startsWith("fr")) {
+            idioma.setSelection(3);
+        }
+
+        idioma.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(android.widget.AdapterView<?> parent, android.view.View view, int position, long id) {
-                if (position > 0) {
-                    AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(codigosIdiomas[position]));
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String idiomaSeleccionado;
+
+                switch (position) {
+                    case 1:
+                        idiomaSeleccionado = "es";
+                        break;
+                    case 2:
+                        idiomaSeleccionado = "en";
+                        break;
+                    case 3:
+                        idiomaSeleccionado = "fr";
+                        break;
+                    default:
+                        return; // No cambiar el idioma al elegir el texto inicial
                 }
+
+                AppCompatDelegate.setApplicationLocales(
+                        LocaleListCompat.forLanguageTags(idiomaSeleccionado)
+                );
             }
+
             @Override
-            public void onNothingSelected(android.widget.AdapterView<?> parent) {}
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
         });
 
         hijos = findViewById(R.id.swtHijos);
@@ -100,65 +123,65 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     boolean comprobaciones = true;
-                    String camposFaltantes = getString(R.string.camposFaltantes);
+                    String camposFaltantes = getString(R.string.errorFaltantes);
 
                     if(nombre.getText().toString().isBlank())
                     {
-                        camposFaltantes += " \"" + getString(R.string.mensajeNombre) + "\"";
+                        camposFaltantes += " \"" + getString(R.string.errorNombre) + "\"";
                         comprobaciones = false;
                     }
 
                     if(apellido.getText().toString().isBlank())
                     {
-                        camposFaltantes += " \"" + getString(R.string.mensajeApellido) + "\" ";
+                        camposFaltantes += " \"" + getString(R.string.errorApellido) + "\" ";
                         comprobaciones = false;
                     }
 
                     if(edad.getText().toString().isBlank())
                     {
-                        camposFaltantes += " \"" + getString(R.string.mensajeEdad) + "\" ";
+                        camposFaltantes += " \"" + getString(R.string.errorEdad) + "\" ";
                         comprobaciones = false;
                     }
 
                     if(generoID <= 0)
                     {
-                        camposFaltantes += " \"" + getString(R.string.mensajeGenero) + "\" ";
+                        camposFaltantes += " \"" + getString(R.string.errorGenero) + "\" ";
                         comprobaciones = false;
                     }
 
                     if(estadoCivil.getSelectedItemPosition() <= 0)
                     {
-                        camposFaltantes += " \"" + getString(R.string.mensajeEstadoCivil) + "\" ";
+                        camposFaltantes += " \"" + getString(R.string.errorEstadoCivil) + "\" ";
                         comprobaciones = false;
                     }
 
 
-                    if(comprobaciones == true)
+                    if(comprobaciones)
                     {
 
-                        String mayoriaEdad = "";
-                        String paternidad = "";
+                        String mayoriaEdad;
+                        String paternidad;
 
                         if(Integer.parseInt(edad.getText().toString())>=18)
                         {
-                            mayoriaEdad = getString(R.string.mayorEdad);
+                            mayoriaEdad = getString(R.string.mensajeMayorEdad);
                         }
                         else
                         {
-                            mayoriaEdad = getString(R.string.menorEdad);
+                            mayoriaEdad = getString(R.string.mensajeMenorEdad);
                         }
 
                         if (hijos.isChecked())
                         {
-                            paternidad = getString(R.string.tieneHijos);
+                            paternidad = getString(R.string.mensajeTieneHijos);
                         }
                         else
                         {
-                            paternidad = getString(R.string.sinHijos);
+                            paternidad = getString(R.string.mensajeSinHijos);
                         }
 
                         mensaje.setText("");
-                        String mensajeMostrar = getString(R.string.tusDatos) + " " + nombre.getText().toString() + " " + apellido.getText().toString() + ", " + mayoriaEdad + ", " + generoStr + ", " + estadoCivil.getSelectedItem().toString() + ", " + paternidad;
+                        String mensajeMostrar = getString(R.string.mensajeDatos) + " " + nombre.getText().toString() + " " + apellido.getText().toString() + ", " + mayoriaEdad + ", " + generoStr + ", " + estadoCivil.getSelectedItem().toString() + ", " + paternidad;
                         Toast.makeText(this, mensajeMostrar, Toast.LENGTH_SHORT).show();
                     }
                     else
@@ -177,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
                     genero.clearCheck();
                     estadoCivil.setSelection(0);
                     hijos.setChecked(false);
+                    mensaje.setText("");
                 }
         );
 

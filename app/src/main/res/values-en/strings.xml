@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Datos personales</string>
-    <string name="hintNombre">Enter your name here</string>
-    <string name="hintApellido">Enter your last name here</string>
-    <string name="hintEdad">Enter your age here</string>
-    <string name="textHombre">Man</string>
-    <string name="textMujer">Woman</string>
 
-    <string-array name="spinnerEstadoCivil">
+    <string-array name="spnIdioma">
+        <item>Choose your language</item>
+        <item>Español</item>
+        <item>English</item>
+        <item>Français</item>
+    </string-array>
+
+    <string name="etextNombre">Enter your name here</string>
+    <string name="etextApellido">Enter your last name here</string>
+    <string name="etextEdad">Enter your age here</string>
+    <string name="rbtnHombre">Man</string>
+    <string name="rbtnMujer">Woman</string>
+
+    <string-array name="spnEstadoCivil">
         <item>Select a Civil Status</item>
         <item>single</item>
         <item>married</item>
@@ -16,26 +24,21 @@
         <item>other</item>
     </string-array>
 
-    <string-array name="spinnerIdioma">
-        <item>Choose your language</item>
-        <item>Español</item>
-        <item>English</item>
-        <item>Français</item>
-    </string-array>
+    <string name="swtHijos">Do you have children?</string>
+    <string name="btnDatos">Show Data</string>
+    <string name="btnReiniciar">Clean</string>
 
-    <string name="textHijos">Do you have children?</string>
-    <string name="textDatos">Show Data</string>
-    <string name="textReiniciar">Clean</string>
+    <string name="errorFaltantes">You need to fill in these fields: </string>
+    <string name="errorNombre">Name</string>
+    <string name="errorApellido">Last name</string>
+    <string name="errorEdad">Age</string>
+    <string name="errorGenero">Gender</string>
+    <string name="errorEstadoCivil">Civil status</string>
 
-    <string name="camposFaltantes">You need to fill in these fields: </string>
-    <string name="mensajeNombre">Name</string>
-    <string name="mensajeApellido">Last name</string>
-    <string name="mensajeEdad">Age</string>
-    <string name="mensajeGenero">Gender</string>
-    <string name="mensajeEstadoCivil">Civil status</string>
-    <string name="mayorEdad">is of legal age</string>
-    <string name="menorEdad">is a minor</string>
-    <string name="tieneHijos">has children</string>
-    <string name="sinHijos">no children</string>
-    <string name="tusDatos">Your data: </string>
+    <string name="mensajeDatos">Your data: </string>
+    <string name="mensajeMayorEdad">is of legal age</string>
+    <string name="mensajeMenorEdad">is a minor</string>
+    <string name="mensajeTieneHijos">has children</string>
+    <string name="mensajeSinHijos">no children</string>
+
 </resources>

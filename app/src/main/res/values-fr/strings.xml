@@ -1,12 +1,20 @@
 <resources>
     <string name="app_name">Datos personales</string>
-    <string name="hintNombre">Entrez votre prénom ici</string>
-    <string name="hintApellido">Entrez votre nom ici</string>
-    <string name="hintEdad">Entrez votre âge ici</string>
-    <string name="textHombre">Homme</string>
-    <string name="textMujer">Femme</string>
 
-    <string-array name="spinnerEstadoCivil">
+    <string-array name="spnIdioma">
+        <item>Choisissez votre langue</item>
+        <item>Español</item>
+        <item>English</item>
+        <item>Français</item>
+    </string-array>
+
+    <string name="etextNombre">Entrez votre prénom ici</string>
+    <string name="etextApellido">Entrez votre nom ici</string>
+    <string name="etextEdad">Entrez votre âge ici</string>
+    <string name="rbtnHombre">Homme</string>
+    <string name="rbtnMujer">Femme</string>
+
+    <string-array name="spnEstadoCivil">
         <item>Sélectionnez un état civil</item>
         <item>Célibataire</item>
         <item>Marié(e)</item>
@@ -15,26 +23,21 @@
         <item>Autre</item>
     </string-array>
 
-    <string-array name="spinnerIdioma">
-        <item>Choisissez votre langue</item>
-        <item>Español</item>
-        <item>English</item>
-        <item>Français</item>
-    </string-array>
+    <string name="swtHijos">Avez-vous des enfants ?</string>
+    <string name="btnDatos">Afficher les données</string>
+    <string name="btnReiniciar">Réinitialiser</string>
 
-    <string name="textHijos">Avez-vous des enfants ?</string>
-    <string name="textDatos">Afficher las données</string>
-    <string name="textReiniciar">Réinitialiser</string>
+    <string name="errorFaltantes">Vous devez remplir ces champs : </string>
+    <string name="errorNombre">Prénom</string>
+    <string name="errorApellido">Nom</string>
+    <string name="errorEdad">Âge</string>
+    <string name="errorGenero">Genre</string>
+    <string name="errorEstadoCivil">État civil</string>
 
-    <string name="camposFaltantes">Vous devez remplir ces champs : </string>
-    <string name="mensajeNombre">Prénom</string>
-    <string name="mensajeApellido">Nom</string>
-    <string name="mensajeEdad">Âge</string>
-    <string name="mensajeGenero">Genre</string>
-    <string name="mensajeEstadoCivil">État civil</string>
-    <string name="mayorEdad">est majeur(e)</string>
-    <string name="menorEdad">est mineur(e)</string>
-    <string name="tieneHijos">a des enfants</string>
-    <string name="sinHijos">sans enfants</string>
-    <string name="tusDatos">Vos données : </string>
+    <string name="mensajeDatos">Vos données : </string>
+    <string name="mensajeMayorEdad">est majeur(e)</string>
+    <string name="mensajeMenorEdad">est mineur(e)</string>
+    <string name="mensajeTieneHijos">a des enfants</string>
+    <string name="mensajeSinHijos">sans enfants</string>
+
 </resources>
